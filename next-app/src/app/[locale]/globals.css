@@ -1,0 +1,65 @@
+/* globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-color: #F2C457;
+    --secondary-color: #F28B57;
+    --red-color: #F25757;
+    --blue-color: #5771F2;
+    --text-color: #7B7583;
+    --gradient-color: linear-gradient(-23deg, var(--primary-color) 0%, var(--red-color) 100%);
+    --grow: radial-gradient(circle, #F2C457, #F25757)
+}
+
+@layer base {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        font-family: Inter, sans-serif !important;
+        scroll-behavior: smooth;
+        text-rendering: optimizeSpeed;
+    }
+
+    p {
+        @apply text-light text-sm sm:text-base text-justify sm:text-left
+    }
+
+    h1 {
+        @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold;
+    }
+
+    h2 {
+        @apply text-4xl lg:text-5xl xl:text-6xl font-bold;
+    }
+
+    h3 {
+        @apply text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold;
+    }
+
+    h4 {
+        @apply text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold;
+    }
+
+}
+
+@layer utilities {
+    .text-shadow-primary {
+        text-shadow: 0px 0px 20px var(--primary-color);
+    }
+
+    .animation {
+        @apply transition-all duration-300;
+    }
+}
