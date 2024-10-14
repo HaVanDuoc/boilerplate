@@ -1,12 +1,34 @@
-import React from "react";
+import utils from "@/utils";
+import Image, { StaticImageData } from "next/image";
+import React, { Fragment } from "react";
 
+interface LogoComponentProps {
+  name?: React.ReactNode;
+  img?: StaticImageData;
+  className?: string;
+}
 
-const LogoComponent = () => {
+const LogoComponent: React.FC<LogoComponentProps> = ({
+  name,
+  img,
+  className,
+}) => {
   return (
-    <div  className="text-light uppercase ">
-    <div className="text-xs leading-none">Project</div>
-    <div className="text-3xl font-bold leading-none">Persona</div>
-  </div>
+    <div className={className}>
+      {name ? (
+        <div className="text-dark uppercase text-3xl font-bold">{name}</div>
+      ) : img ? (
+        <Image
+          src={img?.src}
+          alt={utils.generateRandomAriaLabel("Logo__")}
+          width={img.width}
+          height={img.height}
+          className="w-auto h-full object-cover"
+        />
+      ) : (
+        <Fragment />
+      )}
+    </div>
   );
 };
 

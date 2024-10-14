@@ -1,8 +1,8 @@
 const pathPage = {
     home: "",
     about: "about",
-    whitePaper: "whitePaper",
     contact: "contact",
+    services: "services",
 }
 
 export default pathPage
